@@ -8,10 +8,11 @@
 						http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/security
 						http://www.springframework.org/schema/security/spring-security.xsd">
-						
-	<!-- 시큐리티 태그로 접근 권한을 설정 -->
+	
+	<!-- ////////////////////////////////////////////////////////////////// -->
 	<http use-expressions="true">
-		<intercept-url pattern="/books/add" access="hasAuthority('ROLE_ADMIN')"/> <!-- ROLE_ADMIN 권한을 가진 사용자만 /books/add 에 접근 가능 -->
+		<!-- ROLE_ADMIN 권한을 가진 사용자만 /books/add 에 접근 가능 -->
+		<intercept-url pattern="/books/add" access="hasAuthority('ROLE_ADMIN')"/>
 		<!-- 인증되지 않은 사용자가 특정 경로에 접근하거나 사용자 인증이 필요할 때 로그인 페이지를 보여 주는 데 사용 -->
 		<form-login login-page="/login"
 					default-target-url="/books/add"
@@ -21,8 +22,9 @@
 		<csrf/>
 		<logout logout-success-url="/logout"/>
 	</http>
+	<!-- ////////////////////////////////////////////////////////////////// -->
 	
-	<!-- 시큐리티 태그로 접근 권한을 설정 -->
+	<!-- ////////////////////////////////////////////////////////////////// -->
 	<authentication-manager>
 		<authentication-provider>
 			<!-- 사용자 이름은 Admin, 비밀번호는 Admin1234 인 ROLE_ADMIN 권한을 정의 -->
@@ -31,5 +33,6 @@
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
+	<!-- ////////////////////////////////////////////////////////////////// -->
 		
 </beans:beans>
