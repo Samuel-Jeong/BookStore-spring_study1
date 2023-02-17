@@ -76,7 +76,11 @@
 	</beans:bean>
 	
 	<!-- WebFlow -->
-	<webflow:flow-registry id="flowRegistry">
+	<webflow:flow-builder-services id="flowBuilderServices" view-factory-creator="viewFactoryCreator"/>
+	<beans:bean id="viewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
+		<beans:property name="viewResolvers" ref="tilesViewResolver"/>
+	</beans:bean>
+	<webflow:flow-registry id="flowRegistry" flow-builder-services="flowBuilderServices"> <!-- flow-builder-services : 주문 페이지에 tiles 적용 -->
 		<webflow:flow-location path="/WEB-INF/flows/order/order-flow.xml" id="order"/>
 	</webflow:flow-registry>
 	<beans:bean id="flowHandlerMapping" class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
