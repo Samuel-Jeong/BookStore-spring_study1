@@ -11,23 +11,7 @@
 </head>
 
 <body>
-	<!-- 최상단 Navigation bar -->
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="./home">
-					Home
-				</a>
-			</div>
-		</div>
-	</nav>
-	
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">장바구니</h1>
-		</div>
-	</div>
-	
+
 	<div class="container">
 		<div>
 			<form:form name="clearForm" method="delete">
@@ -83,13 +67,7 @@
 			</a>
 		</div>
 	</div>
-	
-	<!-- footer -->
-	<hr>
-	<footer class="container">
-		<hr>
-		<p>&copy; WebMarket</p>
-	</footer>
+
 </body>
 
 </html>

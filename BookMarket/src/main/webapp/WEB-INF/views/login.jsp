@@ -9,23 +9,6 @@
 </head>
 
 <body>
-	<!-- 최상단 Navigation bar -->
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="./home">
-					로그인
-				</a>
-			</div>
-		</div>
-	</nav>
-	
-	<!-- Header -->
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">로그인</h1>
-		</div>
-	</div>
 	
 	<!-- Content -->
 	<div class="container col-md-4">
@@ -50,12 +33,7 @@
 			</div>
 		</form>
 	</div>
-	
-	<!-- footer -->
-	<footer class="container">
-		<hr>
-		<p>&copy; WebMarket</p>
-	</footer>
+
 </body>
 
 </html>

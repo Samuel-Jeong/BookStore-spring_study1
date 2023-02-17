@@ -10,23 +10,6 @@
 </head>
 
 <body>
-	<!-- 최상단 Navigation bar -->
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/BookMarket/home">
-					Home
-				</a>
-			</div>
-		</div>
-	</nav>
-	
-	<!-- 도서 목록 -->
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">도서 목록</h1>
-		</div>
-	</div>
 	
 	<!-- 도서 리스트 -->
 	<div class="container">
@@ -50,13 +33,7 @@
 			</c:forEach>
 		</div>
 	</div>
-	
-	
-	<!-- footer -->
-	<footer class="container">
-		<hr>
-		<p>&copy; WebMarket</p>
-	</footer>
+
 </body>
 
 </html>

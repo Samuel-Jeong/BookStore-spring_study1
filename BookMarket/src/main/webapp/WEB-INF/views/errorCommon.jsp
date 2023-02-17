@@ -38,12 +38,7 @@
 			</a>
 		</p>
 	</div>
-	
-	<!-- footer -->
-	<footer class="container">
-		<hr>
-		<p>&copy; WebMarket</p>
-	</footer>
+
 </body>
 
 </html>

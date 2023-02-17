@@ -9,25 +9,6 @@
 </head>
 
 <body>
-	<!-- 최상단 Navigation bar -->
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="./home">
-					Home
-				</a>
-			</div>
-		</div>
-	</nav>
-	
-	<div class="jumbotron">
-		<div class="container">
-			<h2 class="alert alert-danger">
-				해당 도서가 존재하지 않습니다.<br>
-				도서 ID : ${invalidBookId}
-			</h2>
-		</div>
-	</div>
 	
 	<div class="container">
 		<p>${url}</p>
@@ -40,12 +21,7 @@
 			</a>
 		</p>
 	</div>
-	
-	<!-- footer -->
-	<footer class="container">
-		<hr>
-		<p>&copy; WebMarket</p>
-	</footer>
+
 </body>
 
 </html>

@@ -11,24 +11,6 @@
 </head>
 
 <body>
-	<!-- 최상단 Navigation bar -->
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="./home">
-					Home
-				</a>
-			</div>
-		</div>
-	</nav>
-	
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">
-				<spring:message code="addBook.form.title.label"/>
-			</h1>
-		</div>
-	</div>
 	
 	<div class="container">
 		<div class="float-right">
@@ -166,12 +148,7 @@
 		</form:form>
 		<hr>
 	</div>
-	
-	<!-- footer -->
-	<footer class="container">
-		<hr>
-		<p>&copy; WebMarket</p>
-	</footer>
+
 </body>
 
 </html>
