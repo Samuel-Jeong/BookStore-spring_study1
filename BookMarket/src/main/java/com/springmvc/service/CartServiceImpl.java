@@ -12,7 +12,7 @@ public class CartServiceImpl implements CartService {
 
 	@Autowired
 	private CartRepository cartRepository;
-	
+
 	@Override
 	public Cart create(Cart cart) {
 		return cartRepository.create(cart);
@@ -29,18 +29,18 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public void delete(String cartId) {		
+	public void delete(String cartId) {
 		cartRepository.delete(cartId);
 	}
 
 	@Override
 	public Cart validateCart(String cartId) {
 		Cart cart = cartRepository.read(cartId);
-		if (cart == null 
+		if (cart == null
 				|| cart.getCartItems().size() == 0) {
 			throw new CartException(cartId);
 		}
 		return cart;
 	}
-	
+
 }

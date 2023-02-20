@@ -6,12 +6,12 @@ import java.util.Objects;
 public class Order implements Serializable {
 
 	private static final long serialVersionUID = 4221771602900107933L;
-	
+
 	private Long orderId; // 주문 ID
 	private Cart cart; // 장바구니 객체
 	private Customer customer; // 고객 객체
 	private Shipping shipping; // 배송지 객체
-	
+
 	public Order() {
 		this.customer = new Customer();
 		this.shipping = new Shipping();
@@ -58,9 +58,7 @@ public class Order implements Serializable {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Order other = (Order) obj;
 		return Objects.equals(cart, other.cart) && Objects.equals(customer, other.customer)

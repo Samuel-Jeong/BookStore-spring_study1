@@ -12,17 +12,17 @@ public class WelcomeController {
 		public String welcome(Model model) {
 			model.addAttribute("greeting", "Welcome to BookMarket");
 			model.addAttribute("strapline", "Welcome to Web Shopping Mall!");
-			
+
 			/**
 			 * 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 					<beans:property name="prefix" value="/WEB-INF/views/" />
 					<beans:property name="suffix" value=".jsp" />
 				</beans:bean>
-				
-				-> /src/main/webapp/WEB-INF/views/welcome.jsp 
+
+				-> /src/main/webapp/WEB-INF/views/welcome.jsp
 			 */
 			return "welcome";
 		}
-	
-	
+
+
 }

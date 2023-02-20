@@ -13,5 +13,5 @@ public interface BookRepository {
 	Set<Book> getBookListByFilter(Map<String, List<String>> filter);
 	Book getBookById(String bookId);
 	void setNewBook(Book book);
-	
+
 }

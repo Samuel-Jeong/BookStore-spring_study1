@@ -15,7 +15,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<img src="<c:url value="/img/${book.getBookId()}/${book.getBookId()}.png"/>"
+				<img src="<c:url value="/img/${book.getBookId()}/${book.getFileName()}.png"/>"
 							onerror="this.src='<c:url value="/resources/images/default/default_profile.png"/>'" 
 							style="width: 100%"/>
 			</div>

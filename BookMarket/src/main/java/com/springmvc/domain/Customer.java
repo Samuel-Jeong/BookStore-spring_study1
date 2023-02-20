@@ -6,16 +6,16 @@ import java.util.Objects;
 public class Customer implements Serializable {
 
 	private static final long serialVersionUID = -8923129427599533816L;
-	
+
 	private String customerId; // 고객 ID
 	private String name; // 고객 이름
 	private Address address; // 고객 주소
 	private String phone; // 고객 전화번호
-	
+
 	public Customer() {
 		this.address = new Address();
 	}
-	
+
 	public Customer(String customerId, String name) {
 		this();
 		this.customerId = customerId;
@@ -63,9 +63,7 @@ public class Customer implements Serializable {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Customer other = (Customer) obj;
 		return Objects.equals(address, other.address) && Objects.equals(customerId, other.customerId)

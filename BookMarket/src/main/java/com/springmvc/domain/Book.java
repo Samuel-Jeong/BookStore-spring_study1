@@ -15,21 +15,21 @@ import org.springframework.web.multipart.MultipartFile;
 import com.springmvc.validator.BookId;
 
 public class Book implements Serializable {
-	
+
 	private static final long serialVersionUID = 8692919825743464166L;
 
 	@BookId
 	@Pattern(regexp="ISBN[1-9]+", message="{Pattern.NewBook.bookId}")
 	private String bookId; // 도서ID
-	
+
 	@Size(min=4, max=50, message="{Size.NewBook.name}")
 	private String name; // 도서
-	
+
 	@Min(value=1000, message="{Min.NewBook.unitPrice}")
 	@Digits(integer=8, fraction=2, message="{Digits.NewBook.unitPrice}")
 	@NotNull(message="{NotNull.NewBook.unitPrice}")
 	private int unitPrice; // 가격
-	
+
 	private String author; // 저자
 	private String description; // 설명
 	private String publisher; // 저자
@@ -37,6 +37,8 @@ public class Book implements Serializable {
 	private long unitsInStock; // 재고 수
 	private String releaseDate; // 출판일(월/년)
 	private String condition; // 신규 도서 또는 중고 도서 또는 전자책
+
+	private String fileName;
 
 	private MultipartFile bookImage; // 도서 이미지
 
@@ -139,6 +141,14 @@ public class Book implements Serializable {
 		this.bookImage = bookImage;
 	}
 
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(author, bookId, bookImage, category, condition, description, name, publisher, releaseDate,
@@ -149,9 +159,7 @@ public class Book implements Serializable {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Book other = (Book) obj;
 		return Objects.equals(author, other.author) && Objects.equals(bookId, other.bookId)
@@ -161,5 +169,5 @@ public class Book implements Serializable {
 				&& Objects.equals(releaseDate, other.releaseDate) && unitPrice == other.unitPrice
 				&& unitsInStock == other.unitsInStock;
 	}
-	
+
 }

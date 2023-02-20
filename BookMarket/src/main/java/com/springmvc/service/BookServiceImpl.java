@@ -17,14 +17,14 @@ import com.springmvc.util.Util;
 
 @Service
 public class BookServiceImpl implements BookService {
-	
+
 	private final Logger log = LoggerFactory.getLogger(getClass());
 
 	@Autowired
 	private BookRepository bookRepository;
-	
+
 	public BookServiceImpl() {}
-	
+
 	@Override
 	public List<Book> getAllBookList() {
 		return bookRepository.getAllBookList();
@@ -57,14 +57,14 @@ public class BookServiceImpl implements BookService {
 					}
 				}
 				File saveFile = new File(savePath.getAbsolutePath() + "/" + book.getBookId() + ".png");
-				
+
 				bookImage.transferTo(saveFile);
 			} catch (Exception e) {
 				log.warn("{}", Util.getLogPrefix(getClass()), e);
 				return;
 			}
 		}
-		
+
 		bookRepository.setNewBook(book);
 	}
 }

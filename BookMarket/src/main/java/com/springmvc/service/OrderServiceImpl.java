@@ -14,13 +14,13 @@ public class OrderServiceImpl implements OrderService {
 
 	@Autowired
 	private BookRepository bookRepository;
-	
+
 	@Autowired
 	private OrderRepository orderRepository;
-	
+
 	@Autowired
 	private CartService cartService;
-	
+
 	@Override
 	public void confirmOrder(String bookId, long quantity) {
 		Book book = bookRepository.getBookById(bookId);
@@ -30,7 +30,7 @@ public class OrderServiceImpl implements OrderService {
 		if (book.getUnitsInStock() < quantity) {
 			throw new IllegalArgumentException(
 					String.format("품절입니다. 사용가능한 재고 수 : [%]", book.getUnitsInStock())
-				);			
+				);
 		}
 		book.setUnitsInStock(book.getUnitsInStock() - quantity);
 	}
@@ -42,5 +42,5 @@ public class OrderServiceImpl implements OrderService {
 		return orderId;
 	}
 
-	
+
 }

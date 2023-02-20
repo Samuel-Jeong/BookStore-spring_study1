@@ -9,5 +9,5 @@ public interface CartService {
 	void update(String cartId, Cart cart);
 	void delete(String cartId);
 	Cart validateCart(String cartId);
-	
+
 }

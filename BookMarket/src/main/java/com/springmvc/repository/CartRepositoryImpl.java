@@ -15,20 +15,20 @@ import com.springmvc.domain.Cart;
 public class CartRepositoryImpl implements CartRepository {
 
 	private final Map<String, Cart> listOfCarts;
-	
+
 	public CartRepositoryImpl() {
 		this.listOfCarts = new HashMap<>();
 	}
 
 	@Override
 	public Cart create(Cart cart) {
-		if (!listOfCarts.isEmpty() 
+		if (!listOfCarts.isEmpty()
 				&& listOfCarts.keySet().contains(cart.getCartId())) {
 			throw new IllegalArgumentException(
 						String.format("장바구니를 생성할 수 없습니다. 장바구니 ID [%] 가 이미 존재합니다.", cart.getCartId())
 					);
 		}
-		
+
 		listOfCarts.put(cart.getCartId(), cart);
 		return cart;
 	}
@@ -59,5 +59,5 @@ public class CartRepositoryImpl implements CartRepository {
 		}
 		listOfCarts.remove(cartId);
 	}
-	
+
 }

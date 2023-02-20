@@ -11,12 +11,12 @@ public class Shipping implements Serializable {
 	private static final long serialVersionUID = 1493936227962677468L;
 
 	private String name; // 배송 고객 이름
-	
+
 	@DateTimeFormat(pattern="yyyy/MM/dd")
 	private Date date; // 배송일
-	
+
 	private Address address; // 배송 주소 객체
-	
+
 	public Shipping() {
 		this.address = new Address();
 	}
@@ -54,13 +54,11 @@ public class Shipping implements Serializable {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Shipping other = (Shipping) obj;
 		return Objects.equals(address, other.address) && Objects.equals(date, other.date)
 				&& Objects.equals(name, other.name);
 	}
-	
+
 }

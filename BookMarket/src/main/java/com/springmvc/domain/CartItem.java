@@ -4,27 +4,27 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class CartItem implements Serializable {
-	
+
 	private static final long serialVersionUID = -2220274791589791282L;
-	
+
 	private Book book; // 도서
 	private int quantity; // 도서 개수
 	private int totalPrice; // 도서 가격
-	
+
 	public CartItem() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public CartItem(Book book) {
 		this.book = book;
 		this.quantity = 1;
 		this.totalPrice = book.getUnitPrice();
 	}
-	
+
 	public Book getBook() {
 		return book;
 	}
-	
+
 	public void setBook(Book book) {
 		this.book = book;
 	}
@@ -54,12 +54,10 @@ public class CartItem implements Serializable {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		CartItem other = (CartItem) obj;
 		return Objects.equals(book, other.book) && quantity == other.quantity && totalPrice == other.totalPrice;
 	}
-		
+
 }

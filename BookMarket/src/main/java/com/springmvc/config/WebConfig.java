@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 //@PropertySource("classpath:/config/application.properties")
 public class WebConfig implements WebMvcConfigurer {
-	
+
 	private final Logger log = LoggerFactory.getLogger(getClass());
 
 //	Not working ...
@@ -22,13 +22,13 @@ public class WebConfig implements WebMvcConfigurer {
 //	@Value("${file.save.path}")
 //	@Value("#{file['file.save.path']}")
 	private String imageSavePath;
-	
-	public WebConfig (@Value("#{file['file.upload.path']}") String uploadPath, 
+
+	public WebConfig (@Value("#{file['file.upload.path']}") String uploadPath,
 						@Value("#{file['file.save.path']}") String savePath) {
 		this.imageUploadPath = uploadPath;
 		this.imageSavePath = savePath;
 	}
-	
+
 //	Not working ...
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -37,5 +37,5 @@ public class WebConfig implements WebMvcConfigurer {
 		registry.addResourceHandler(imageUploadPath)
 				.addResourceLocations(imageSavePath);
 	}
-	
+
 }

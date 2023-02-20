@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Address implements Serializable {
 
 	private static final long serialVersionUID = -824607634067469239L;
-	
+
 	private String detailName; // 세부 주소
 	private String addressName; // 주소
 	private String country; // 국가명
@@ -35,19 +35,17 @@ public class Address implements Serializable {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(addressName, country, detailName, zipCode);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Address other = (Address) obj;
 		return Objects.equals(addressName, other.addressName) && Objects.equals(country, other.country)
