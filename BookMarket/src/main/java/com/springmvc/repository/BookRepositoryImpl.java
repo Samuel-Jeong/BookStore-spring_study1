@@ -17,7 +17,7 @@ import com.springmvc.exception.BookIdException;
 
 @Primary
 @Repository
-public class BookRepositoryJdbc implements BookRepository {
+public class BookRepositoryImpl implements BookRepository {
 
 	private final String SELECT_ALL_BOOK_TABLE = "select * from book";
 	private final String COUNT_BY_BOOKID = "select count(*) from book where b_bookId=?";
